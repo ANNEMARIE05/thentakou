@@ -8,7 +8,7 @@ import {
   FaEnvelope,
   FaPhoneAlt,
 } from 'react-icons/fa'
-import { liensSociaux } from '../data/siteContent'
+import { liensSociaux, informationsOrganisation } from '../data/siteContent'
 
 const iconesSociaux = {
   FaInstagram,
@@ -100,6 +100,14 @@ export default function Footer({ langue }) {
                 >
                   {langue === 'fr' ? 'Faire un don' : 'Make a donation'}
                 </a>
+              </li>
+              <li className="pt-2 space-y-1">
+                <p className="text-xs uppercase tracking-[0.1em] text-pureWhite/60 font-semibold">
+                  {langue === 'fr' ? 'Pays d\'intervention' : 'Countries of operation'}
+                </p>
+                <p className="text-sm text-pureWhite/80">
+                  {informationsOrganisation.paysIntervention[langue].join(', ')}
+                </p>
               </li>
             </ul>
           </div>

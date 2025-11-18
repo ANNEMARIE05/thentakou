@@ -50,7 +50,7 @@ function App() {
     <div className="bg-pureWhite text-dusk">
       <ScrollToTopOnRoute />
       <NavBar langue={langue} changerLangue={definirLangue} />
-      <main className="pt-24 space-y-16">
+      <main className="pt-20 md:pt-24 space-y-8 md:space-y-16">
         <Routes>
           <Route path="/" element={<PageAkwaba langue={langue} textes={textes} />} />
           <Route path="/apropos" element={<PageApropos langue={langue} textes={textes} />} />

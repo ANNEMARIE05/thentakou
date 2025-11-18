@@ -12,13 +12,13 @@ const elementsNavigation = [
   { chemin: '/contact', etiquette: { fr: 'CONTACT', en: 'CONTACT' } },
 ]
 
-const BasculeLangue = ({ courante, changer }) => (
-  <div className="flex items-center gap-0 bg-pureWhite border-2 border-darkYellow rounded-sm overflow-hidden text-xs font-semibold uppercase">
+const BasculeLangue = ({ courante, changer, mobile = false }) => (
+  <div className={`flex items-center gap-0 bg-pureWhite border-2 border-darkYellow rounded-sm overflow-hidden font-semibold uppercase ${mobile ? 'text-sm' : 'text-xs'}`}>
     {['fr', 'en'].map((langue) => (
       <button
         key={langue}
         onClick={() => changer(langue)}
-        className={`px-4 py-2 transition-all duration-300 font-bold ${
+        className={`${mobile ? 'px-6 py-3' : 'px-4 py-2'} transition-all duration-300 font-bold ${
           courante === langue
             ? 'bg-darkYellow text-deepBlack shadow-[0_0_10px_rgba(212,175,55,0.6)]'
             : 'text-deepBlack hover:text-darkYellow hover:bg-darkYellow/10'
@@ -118,7 +118,9 @@ export default function NavBar({ langue, changerLangue }) {
           >
             {langue === 'fr' ? 'FAIRE UN DON' : 'MAKE A DONATION'}
           </a>
-          <BasculeLangue courante={langue} changer={changerLangue} />
+          <div className="flex justify-center">
+            <BasculeLangue courante={langue} changer={changerLangue} mobile={true} />
+          </div>
         </Motion.div>
       )}
     </header>

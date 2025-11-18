@@ -17,24 +17,24 @@ export default function ProgramCard({ programme, langue }) {
       transition={{ duration: 0.5 }}
     >
       <div
-        className="h-60 bg-cover bg-center"
+        className="h-40 md:h-60 bg-cover bg-center"
         style={{ backgroundImage: `url(${programme.image})` }}
       />
-      <div className="p-6 flex flex-col flex-1 space-y-4">
+      <div className="p-4 md:p-6 flex flex-col flex-1 space-y-2 md:space-y-4">
         <div
-          className={`inline-flex text-xs font-bold uppercase tracking-[0.3em] text-pureWhite px-4 py-1 bg-gradient-to-r ${stylesVariantes[programme.variante]}`}
+          className={`inline-flex text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-pureWhite px-3 md:px-4 py-0.5 md:py-1 bg-gradient-to-r ${stylesVariantes[programme.variante]}`}
         >
           {programme.variante === 'standard' && (langue === 'fr' ? 'Signature' : 'Signature')}
           {programme.variante === 'rouge' && (langue === 'fr' ? 'Edition Rouge' : 'Red edition')}
           {programme.variante === 'vert' && (langue === 'fr' ? 'Edition Verte' : 'Green edition')}
         </div>
-        <h3 className="font-burbank text-3xl text-deepBlack">
+        <h3 className="font-burbank text-xl md:text-3xl text-deepBlack">
           {programme.titre}
         </h3>
-        <p className="text-dusk/80 leading-relaxed flex-1">
+        <p className="text-sm md:text-base text-dusk/80 leading-relaxed flex-1">
           {programme.description[langue]}
         </p>
-        <button className="group flex items-center gap-2 text-darkYellow font-semibold uppercase tracking-widest hover:text-deepBlack transition-colors">
+        <button className="group flex items-center gap-2 text-sm md:text-base text-darkYellow font-semibold uppercase tracking-widest hover:text-deepBlack transition-colors">
           <span>{langue === 'fr' ? 'Découvrir' : 'Discover'}</span>
           <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
         </button>

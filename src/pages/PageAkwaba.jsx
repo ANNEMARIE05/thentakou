@@ -134,14 +134,20 @@ export default function PageAkwaba({ langue, textes }) {
 
   const livrePrecedent = () => {
     definirLivreActive((prev) => {
-      const maxSlides = Math.max(0, livres.length - 3)
+      // Sur mobile: une carte à la fois (0 à length-1)
+      // Sur desktop: 3 cartes visibles (0 à length-3)
+      const isMobile = window.innerWidth < 768
+      const maxSlides = isMobile ? livres.length - 1 : Math.max(0, livres.length - 3)
       return prev === 0 ? maxSlides : prev - 1
     })
   }
 
   const livreSuivant = () => {
     definirLivreActive((prev) => {
-      const maxSlides = Math.max(0, livres.length - 3)
+      // Sur mobile: une carte à la fois (0 à length-1)
+      // Sur desktop: 3 cartes visibles (0 à length-3)
+      const isMobile = window.innerWidth < 768
+      const maxSlides = isMobile ? livres.length - 1 : Math.max(0, livres.length - 3)
       return prev >= maxSlides ? 0 : prev + 1
     })
   }
@@ -173,7 +179,7 @@ export default function PageAkwaba({ langue, textes }) {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h1 className="font-burbank text-5xl md:text-7xl leading-tight text-pureWhite">
+            <h1 className="font-burbank text-4xl md:text-5xl lg:text-7xl leading-tight text-pureWhite">
               {langue === 'fr' 
                 ? 'AKWABA' 
                 : 'AKWABA'}
@@ -224,30 +230,30 @@ export default function PageAkwaba({ langue, textes }) {
       </section>
 
       {/* Section avec fond jaune et trois cartes */}
-      <section className="bg-darkYellow py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-3xl md:text-4xl font-burbank text-deepBlack mb-12">
+      <section className="bg-darkYellow py-10 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <h2 className="text-center text-xl md:text-3xl lg:text-4xl font-burbank text-deepBlack mb-6 md:mb-12">
             {langue === 'fr' 
               ? 'Nous sommes une organisation caritative et ONG à but non lucratif'
               : 'We are non-profit Charity & NGO Organization'}
           </h2>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-4 md:gap-8 md:grid-cols-3">
             {/* Carte Donation */}
             <Motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-pureWhite p-8 shadow-[0_20px_40px_rgba(0,0,0,0.15)] space-y-4"
+              className="bg-pureWhite p-4 md:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.15)] space-y-2 md:space-y-4"
             >
-              <div className="text-5xl text-darkYellow mb-4">💰</div>
-              <h3 className="font-burbank text-2xl text-deepBlack">
+              <div className="text-4xl md:text-5xl text-darkYellow mb-2 md:mb-4">💰</div>
+              <h3 className="font-burbank text-xl md:text-2xl text-deepBlack">
                 {langue === 'fr' ? 'Donation' : 'Donation'}
               </h3>
-              <p className="text-sm font-semibold text-dusk/70 uppercase tracking-wide">
+              <p className="text-xs md:text-sm font-semibold text-dusk/70 uppercase tracking-wide">
                 {langue === 'fr' ? 'Collecter des fonds dans le monde entier' : 'Collect fund over the world'}
               </p>
-              <p className="text-dusk/80 leading-relaxed">
+              <p className="text-xs md:text-sm text-dusk/80 leading-relaxed">
                 {langue === 'fr'
                   ? 'Chaque contribution se transforme en livres, bourses et ateliers pour les enfants. Votre générosité fait la différence.'
                   : 'Every contribution becomes books, scholarships and workshops for children. Your generosity makes a difference.'}
@@ -260,16 +266,16 @@ export default function PageAkwaba({ langue, textes }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-pureWhite p-8 shadow-[0_20px_40px_rgba(0,0,0,0.15)] space-y-4"
+              className="bg-pureWhite p-4 md:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.15)] space-y-2 md:space-y-4"
             >
-              <div className="text-5xl text-darkYellow mb-4">💵</div>
-              <h3 className="font-burbank text-2xl text-deepBlack">
+              <div className="text-4xl md:text-5xl text-darkYellow mb-2 md:mb-4">💵</div>
+              <h3 className="font-burbank text-xl md:text-2xl text-deepBlack">
                 {langue === 'fr' ? 'Collecte de fonds' : 'Fundraising'}
               </h3>
-              <p className="text-sm font-semibold text-dusk/70 uppercase tracking-wide">
+              <p className="text-xs md:text-sm font-semibold text-dusk/70 uppercase tracking-wide">
                 {langue === 'fr' ? 'Collecter des fonds dans le monde entier' : 'Collect fund over the world'}
               </p>
-              <p className="text-dusk/80 leading-relaxed">
+              <p className="text-xs md:text-sm text-dusk/80 leading-relaxed">
                 {langue === 'fr'
                   ? 'Nous organisons des événements et des campagnes pour mobiliser des ressources et créer un impact durable dans les communautés.'
                   : 'We organize events and campaigns to mobilize resources and create lasting impact in communities.'}
@@ -282,16 +288,16 @@ export default function PageAkwaba({ langue, textes }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-pureWhite p-8 shadow-[0_20px_40px_rgba(0,0,0,0.15)] space-y-4"
+              className="bg-pureWhite p-4 md:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.15)] space-y-2 md:space-y-4"
             >
-              <div className="text-5xl text-darkYellow mb-4">🤝</div>
-              <h3 className="font-burbank text-2xl text-deepBlack">
+              <div className="text-4xl md:text-5xl text-darkYellow mb-2 md:mb-4">🤝</div>
+              <h3 className="font-burbank text-xl md:text-2xl text-deepBlack">
                 {langue === 'fr' ? 'Bénévole' : 'Volunteer'}
               </h3>
-              <p className="text-sm font-semibold text-dusk/70 uppercase tracking-wide">
+              <p className="text-xs md:text-sm font-semibold text-dusk/70 uppercase tracking-wide">
                 {langue === 'fr' ? 'Collecter des fonds dans le monde entier' : 'Collect fund over the world'}
               </p>
-              <p className="text-dusk/80 leading-relaxed">
+              <p className="text-xs md:text-sm text-dusk/80 leading-relaxed">
                 {langue === 'fr'
                   ? 'Rejoignez notre équipe de bénévoles passionnés et contribuez à transformer des vies grâce à l\'éducation et à la lecture.'
                   : 'Join our team of passionate volunteers and help transform lives through education and reading.'}
@@ -302,9 +308,9 @@ export default function PageAkwaba({ langue, textes }) {
       </section>
 
       {/* Section About Us avec image et texte */}
-      <section className="bg-pureWhite py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 items-center">
+      <section className="bg-pureWhite py-10 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="grid gap-6 md:gap-12 md:grid-cols-2 items-center">
             <Motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -322,9 +328,9 @@ export default function PageAkwaba({ langue, textes }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
-              <h2 className="font-burbank text-4xl md:text-5xl text-deepBlack">
+              <h2 className="font-burbank text-2xl md:text-4xl lg:text-5xl text-deepBlack">
                 {langue === 'fr' ? (
                   <>
                     Bienvenue à <span className="text-darkYellow">The N'Takou</span>
@@ -335,7 +341,7 @@ export default function PageAkwaba({ langue, textes }) {
                   </>
                 )}
               </h2>
-              <p className="text-dusk/80 leading-relaxed text-lg">
+              <p className="text-sm md:text-base lg:text-lg text-dusk/80 leading-relaxed">
                 {textes.histoire}
               </p>
               <Link
@@ -351,29 +357,29 @@ export default function PageAkwaba({ langue, textes }) {
       </section>
 
       {/* Section Statistiques */}
-      <section className="mx-auto max-w-6xl px-6 py-20 section-wave">
+      <section className="mx-auto max-w-6xl px-4 md:px-6 py-10 md:py-20 section-wave">
         <SectionTitle
           eyebrow="Impact"
           title={langue === 'fr' ? 'Tellement de choses en 10 ans…' : 'So much in 10 years…'}
           subtitle={textes.introTerrain}
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 md:mt-12 grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {statistiquesImpact.map((stat) => {
             const Icone = iconesStatistiques[stat.icone]
             return (
               <Motion.div
                 key={stat.etiquette.fr}
-                className="group rounded-none border-2 border-darkYellow bg-deepBlack text-pureWhite p-6 text-center space-y-3 shadow-jaune hover:shadow-jauneFort transition-all duration-300 hover:scale-105"
+                className="group rounded-none border-2 border-darkYellow bg-deepBlack text-pureWhite p-4 md:p-6 text-center space-y-2 md:space-y-3 shadow-jaune hover:shadow-jauneFort transition-all duration-300 hover:scale-105"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <Icone className="mx-auto text-4xl text-darkYellow group-hover:scale-110 transition-transform" />
-                <p className="font-burbank text-4xl text-darkYellow">
+                <Icone className="mx-auto text-3xl md:text-4xl text-darkYellow group-hover:scale-110 transition-transform" />
+                <p className="font-burbank text-3xl md:text-4xl text-darkYellow">
                   <AnimatedCounter value={stat.valeur} duration={2} />
                 </p>
-                <p className="text-sm uppercase tracking-[0.4em] text-pureWhite/80">
+                <p className="text-xs md:text-sm uppercase tracking-[0.3em] md:tracking-[0.4em] text-pureWhite/80">
                   {stat.etiquette[langue]}
                 </p>
               </Motion.div>
@@ -383,8 +389,8 @@ export default function PageAkwaba({ langue, textes }) {
       </section>
 
       {/* Section Livres avec Slider */}
-      <section className="bg-pureWhite py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-pureWhite py-10 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionTitle
             eyebrow="Inspiration / Inspiration"
             title={langue === 'fr' ? 'Paroles d\'inspiration' : 'Words of Inspiration'}
@@ -394,11 +400,50 @@ export default function PageAkwaba({ langue, textes }) {
                 : 'Quotes that guide and inspire us in our educational mission.'
             }
           />
-          <div className="mt-12 relative">
+          <div className="mt-6 md:mt-12 relative">
             {/* Conteneur du slider */}
             <div className="relative overflow-hidden">
+              {/* Version mobile : une carte à la fois */}
+              <div className="md:hidden overflow-hidden">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ 
+                    transform: `translateX(-${livreActive * 100}%)` 
+                  }}
+                >
+                  {livres.map((livre, index) => (
+                    <div key={index} className="w-full flex-shrink-0 px-2">
+                      <Motion.div
+                        className="group flex flex-col rounded-none border-2 border-dusk/10 bg-pureWhite shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-darkYellow transition-all duration-300 overflow-hidden h-full"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <div className="w-full h-64 overflow-hidden bg-dusk/5 flex items-center justify-center">
+                          <img
+                            src={livre.image}
+                            alt={livre.titre[langue]}
+                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="p-4 flex flex-col flex-1">
+                          <h3 className="font-burbank text-base text-deepBlack mb-2 group-hover:text-darkYellow transition-colors">
+                            {livre.auteur[langue]}
+                          </h3>
+                          <p className="text-sm text-dusk/80 leading-relaxed flex-1 italic">
+                            "{livre.citation[langue]}"
+                          </p>
+                        </div>
+                      </Motion.div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Version desktop : slider horizontal */}
               <div 
-                className="flex gap-8 transition-transform duration-500 ease-in-out"
+                className="hidden md:flex gap-4 lg:gap-8 transition-transform duration-500 ease-in-out"
                 style={{ 
                   transform: `translateX(-${livreActive * 33.333}%)` 
                 }}
@@ -412,18 +457,18 @@ export default function PageAkwaba({ langue, textes }) {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4 }}
                     >
-                      <div className="w-full h-64 overflow-hidden bg-dusk/5">
+                      <div className="w-full h-48 md:h-64 overflow-hidden bg-dusk/5">
                         <img
                           src={livre.image}
                           alt={livre.titre[langue]}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>
-                      <div className="p-6 flex flex-col flex-1">
-                        <h3 className="font-burbank text-xl text-deepBlack mb-3 group-hover:text-darkYellow transition-colors">
+                      <div className="p-4 md:p-6 flex flex-col flex-1">
+                        <h3 className="font-burbank text-lg md:text-xl text-deepBlack mb-2 md:mb-3 group-hover:text-darkYellow transition-colors">
                           {livre.auteur[langue]}
                         </h3>
-                        <p className="text-dusk/80 leading-relaxed text-sm flex-1 italic">
+                        <p className="text-xs md:text-sm text-dusk/80 leading-relaxed flex-1 italic">
                           "{livre.citation[langue]}"
                         </p>
                       </div>
@@ -433,28 +478,28 @@ export default function PageAkwaba({ langue, textes }) {
               </div>
             </div>
 
-            {/* Boutons de navigation */}
-            <div className="flex items-center justify-center gap-4 mt-8">
+            {/* Boutons de navigation - mobile et desktop */}
+            <div className="flex items-center justify-center gap-4 mt-6 md:mt-8">
               <button
                 onClick={livrePrecedent}
-                className="p-3 border-2 border-darkYellow bg-pureWhite text-deepBlack hover:bg-darkYellow hover:text-pureWhite transition-all duration-300 shadow-jaune"
+                className="p-2 md:p-3 border-2 border-darkYellow bg-pureWhite text-deepBlack hover:bg-darkYellow hover:text-pureWhite transition-all duration-300 shadow-jaune"
                 aria-label={langue === 'fr' ? 'Livre précédent' : 'Previous book'}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
 
               {/* Dots de pagination */}
               <div className="flex gap-2">
-                {Array.from({ length: Math.max(1, livres.length - 2) }).map((_, index) => (
+                {livres.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => definirLivreActive(index)}
-                    className={`h-3 rounded-full transition-all ${
+                    className={`h-2 md:h-3 rounded-full transition-all ${
                       index === livreActive
-                        ? 'bg-darkYellow w-8'
-                        : 'bg-dusk/30 w-3 hover:bg-dusk/50'
+                        ? 'bg-darkYellow w-6 md:w-8'
+                        : 'bg-dusk/30 w-2 md:w-3 hover:bg-dusk/50'
                     }`}
                     aria-label={`${langue === 'fr' ? 'Livre' : 'Book'} ${index + 1}`}
                   />
@@ -463,10 +508,10 @@ export default function PageAkwaba({ langue, textes }) {
 
               <button
                 onClick={livreSuivant}
-                className="p-3 border-2 border-darkYellow bg-pureWhite text-deepBlack hover:bg-darkYellow hover:text-pureWhite transition-all duration-300 shadow-jaune"
+                className="p-2 md:p-3 border-2 border-darkYellow bg-pureWhite text-deepBlack hover:bg-darkYellow hover:text-pureWhite transition-all duration-300 shadow-jaune"
                 aria-label={langue === 'fr' ? 'Livre suivant' : 'Next book'}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -476,19 +521,19 @@ export default function PageAkwaba({ langue, textes }) {
       </section>
 
       {/* Section Témoignages avec Slider */}
-      <section className="bg-mask-pattern py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-mask-pattern py-10 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionTitle
             eyebrow="Voix / Voices"
             title={langue === 'fr' ? 'Témoignages' : 'Testimonials'}
             subtitle={textes.introTemoignages}
           />
-          <div className="mt-12 relative">
+          <div className="mt-6 md:mt-12 relative">
             {/* Conteneur du slider */}
             <div className="relative overflow-hidden">
               <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${temoignageActive * 100}%)` }}>
                 {temoignages.map((personne, index) => (
-                  <div key={personne.nom} className="min-w-full px-3">
+                  <div key={personne.nom} className="min-w-full px-2 md:px-3">
                     <Motion.figure
                       className="group flex flex-col rounded-none border-2 border-dusk/10 bg-pureWhite shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-darkYellow transition-all duration-300 overflow-hidden max-w-2xl mx-auto"
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -496,19 +541,19 @@ export default function PageAkwaba({ langue, textes }) {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4 }}
                     >
-                      <div className="w-full h-64 overflow-hidden bg-dusk/5 flex items-center justify-center">
+                      <div className="w-full h-48 md:h-64 overflow-hidden bg-dusk/5 flex items-center justify-center">
                         <img
                           src={personne.portrait}
                           alt={personne.nom}
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <div className="p-6 flex flex-col flex-1">
-                        <p className="font-semibold text-lg text-deepBlack mb-1 group-hover:text-darkYellow transition-colors">
+                      <div className="p-4 md:p-6 flex flex-col flex-1">
+                        <p className="font-semibold text-base md:text-lg text-deepBlack mb-1 group-hover:text-darkYellow transition-colors">
                           {personne.nom}
                         </p>
-                        <p className="text-sm text-dusk/70 mb-4">{personne.role}</p>
-                        <p className="text-base leading-relaxed text-dusk/80 flex-1">
+                        <p className="text-xs md:text-sm text-dusk/70 mb-2 md:mb-4">{personne.role}</p>
+                        <p className="text-sm md:text-base leading-relaxed text-dusk/80 flex-1">
                           {personne.citation[langue]}
                         </p>
                       </div>
@@ -561,8 +606,8 @@ export default function PageAkwaba({ langue, textes }) {
       </section>
 
       {/* Section Partenaires avec slider */}
-      <section className="bg-pureWhite py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-pureWhite py-10 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionTitle
             eyebrow="Partners / Partenaires"
             title={langue === 'fr' ? 'Nos Partenaires' : 'Our Partners'}
@@ -572,9 +617,9 @@ export default function PageAkwaba({ langue, textes }) {
                 : 'Organizations supporting our educational mission.'
             }
           />
-          <div className="mt-12 overflow-hidden relative">
+          <div className="mt-6 md:mt-12 overflow-hidden relative">
             <div 
-              className="flex gap-6 md:gap-8"
+              className="flex gap-4 md:gap-6 lg:gap-8"
               style={{ 
                 transform: `translateX(-${positionPartenaires}px)`,
                 willChange: 'transform'
@@ -584,13 +629,13 @@ export default function PageAkwaba({ langue, textes }) {
               {[...logosPartenaires, ...logosPartenaires, ...logosPartenaires].map((logo, index) => (
                 <div
                   key={`partner-${index}`}
-                  className="flex-shrink-0 w-40 md:w-48 lg:w-56"
+                  className="flex-shrink-0 w-32 md:w-40 lg:w-48 xl:w-56"
                 >
-                  <div className="h-32 flex items-center justify-center bg-pureWhite border-2 border-dusk/10 p-4 md:p-6 hover:border-darkYellow transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] group">
+                  <div className="h-24 md:h-32 flex items-center justify-center bg-pureWhite border-2 border-dusk/10 p-3 md:p-4 lg:p-6 hover:border-darkYellow transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] group">
                     <img
                       src={logo}
                       alt={`Partner ${index % logosPartenaires.length + 1}`}
-                      className="max-h-16 md:max-h-20 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-h-12 md:max-h-16 lg:max-h-20 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                       onError={(e) => {
                         e.target.style.display = 'none'
                       }}

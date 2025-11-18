@@ -4,7 +4,8 @@ export const textesLangues = {
     accueil:
       "The N'Takou c'est un peu d'Amour, de Solidarité Internationale et beaucoup d'Afrique !",
     introTemoignages: "Qu'ils soient banquiers, étudiants, diplomates, politiciens, coréens, français, auteurs, ivoiriens, camerounais, femmes au foyer ou encore américains; Ils ont un coeur humanitaire et ils font The N'Takou à travers le monde.",
-    histoire: "Emprunté à la langue Yacouba de l'ouest ivoirien, « N'Takou » désigne étimologiquement la solidarité. A The N'Takou, nous n'avons pas la prétention de changer le monde, mais nous voulons que l'accès à l'éducation ne soit plus une utopie réalisable pour les enfants. Créée en 2015 à Asnières-sur-Seine, en France, The N'Takou est une organisation humanitaire engagée ici et là-bas auprès des enfants issus des foyers à faibles revenus. Inspirée du système éducatif français et du miracle de Han River Sud-Coréen, The N'Takou milite pour l'accès à l'éducation populaire en Afrique.",
+    histoire: "Emprunté à la langue Yacouba de l'ouest ivoirien, « N'Takou » désigne étimologiquement la solidarité. A The N'Takou, nous n'avons pas la prétention de changer le monde, mais nous voulons que l'accès à l'éducation ne soit plus une utopie réalisable pour les enfants. Créée en 2015 à Asnières-sur-Seine, en France, The N'Takou est une organisation internationale engagée sur de nombreux fronts de lutte contre les inégalités d'accès à l'éducation populaire dans 3 pays en Afrique : le Cameroun, la Côte d'Ivoire et la République Démocratique du Congo. Inspirée du système éducatif français et du miracle de Han River Sud-Coréen, The N'Takou milite pour l'accès à l'éducation populaire en Afrique.",
+    descriptionOrganisation: "The N'Takou est une organisation internationale engagée sur de nombreux fronts de lutte contre les inégalités d'accès à l'éducation populaire dans 3 pays en Afrique : le Cameroun, la Côte d'Ivoire et la République Démocratique du Congo. À partir de nos programmes et missions humanitaires, nous mettons à disposition des enfants, des bibliothèques et ludothèques dans leurs établissements scolaires en Afrique ainsi qu'une banque alimentaire pour les cantines scolaires. Nous nous réservons le droit de prendre la parole pour dénoncer les insuffisances et les abus du système éducatif dans les pays d'intervention. Nos actions s'inscrivent dans une dynamique Nord/Sud et s'alignent sur les Objectifs de Développement Durable (ODD) de l'Organisation des Nations Unies (ONU). The N'Takou vient en aide aux enfants en Afrique indépendamment de leur race, de leur tribu, de leur religion ou de leur sexe.",
     introLeadership:
       'Une équipe engagée qui imagine des solutions locales et inclusives pour chaque territoire.',
     introTerrain:
@@ -14,9 +15,13 @@ export const textesLangues = {
     introEngagement:
       '💛 Vous êtes un coeur humanitaire ? Venez comme vous êtes à The N\'Takou en France, en Corée du Sud, au Cameroun, en Côte d\'Ivoire et en République Démocratique du Congo.',
     introContact:
-      'Un projet, une question ou l’envie d’agir à nos côtés ? Écrivez-nous.',
+      'Un projet, une question ou l\'envie d\'agir à nos côtés ? Écrivez-nous.',
     ctaContact: 'Envoyer le message',
     succesFormulaire: 'Merci ! Nous revenons rapidement vers vous.',
+    introBibliotheques:
+      'Nos bibliothèques scolaires sont des espaces d\'apprentissage et de découverte qui offrent aux enfants un accès privilégié à la lecture et à l\'éducation. Implantées dans des écoles partenaires en Afrique francophone, elles proposent des collections de livres adaptées aux différents niveaux, des rayons thématiques (Afrique, jeux de société, littérature jeunesse) et des espaces de lecture conviviaux. Ces bibliothèques deviennent des lieux de vie où les élèves peuvent explorer, apprendre et développer leur amour pour la lecture dans un environnement stimulant et sécurisé.',
+    descriptionBibliotheques:
+      'Chaque bibliothèque est conçue pour répondre aux besoins spécifiques de sa communauté scolaire. Nous travaillons en étroite collaboration avec les enseignants et les directeurs d\'établissements pour créer des espaces qui favorisent l\'apprentissage, l\'autonomie et l\'épanouissement des enfants. Nos bibliothèques accueillent également des ateliers de lecture, des clubs de lecture et des activités pédagogiques qui enrichissent l\'expérience éducative des élèves.',
   },
   en: {
     slogan: "Children's Rights to Education Advocate",
@@ -24,7 +29,8 @@ export const textesLangues = {
       'The N’Takou is a little love, a little global solidarity and a lot of Africa.',
     introTemoignages: "Whether they are bankers, students, diplomats, politicians, Koreans, French, authors, Ivorians, Cameroonians, homemakers or Americans; They have a humanitarian heart and they make The N'Takou around the world.",
     histoire:
-      'Since July 2015, The N’Takou has championed literacy by opening school libraries, donating books and ensuring girls stay in school across Francophone Africa.',
+      "Since July 2015, The N'Takou has championed literacy by opening school libraries, donating books and ensuring girls stay in school across Francophone Africa.",
+    descriptionOrganisation: "The N'Takou is an international organization committed on many fronts to fighting inequalities in access to popular education in 3 African countries: Cameroon, Côte d'Ivoire and the Democratic Republic of Congo. Through our programs and humanitarian missions, we provide children with libraries and game libraries in their schools in Africa, as well as a food bank for school canteens. We reserve the right to speak out to denounce the shortcomings and abuses of the education system in the countries where we operate. Our actions are part of a North/South dynamic and align with the Sustainable Development Goals (SDGs) of the United Nations (UN). The N'Takou helps children in Africa regardless of their race, tribe, religion or gender.",
     introLeadership:
       'A committed leadership team imagining local, inclusive solutions for every community.',
     introTerrain:
@@ -37,19 +43,23 @@ export const textesLangues = {
       'Have an idea, a partnership or a question? Drop us a line.',
     ctaContact: 'Send message',
     succesFormulaire: 'Thank you! We will reply shortly.',
+    introBibliotheques:
+      'Our school libraries are learning and discovery spaces that provide children with privileged access to reading and education. Located in partner schools in Francophone Africa, they offer book collections adapted to different levels, thematic sections (Africa, board games, children\'s literature) and welcoming reading spaces. These libraries become living spaces where students can explore, learn and develop their love of reading in a stimulating and secure environment.',
+    descriptionBibliotheques:
+      'Each library is designed to meet the specific needs of its school community. We work closely with teachers and school principals to create spaces that promote learning, autonomy and children\'s development. Our libraries also host reading workshops, reading clubs and educational activities that enrich students\' educational experience.',
   },
 }
 
 export const imagesCarrouselHero = [
   {
-    url: '/images/accueil principal.jpg',
+    url: '/images/accueil principal 1.jpg',
     legende: {
       fr: 'The N\'Takou - Accueil',
       en: 'The N\'Takou - Welcome',
     },
   },
   {
-    url: '/images/accueil principal 1.jpg',
+    url: '/images/accueil principal.jpg',
     legende: {
       fr: 'The N\'Takou - Accueil',
       en: 'The N\'Takou - Welcome',
@@ -194,32 +204,6 @@ export const statistiquesImpact = [
   },
 ]
 
-export const galerieTerrain = [
-  {
-    url: '/images/Asset 1.jpg',
-    legende: { fr: 'Atelier artistique', en: 'Artistic workshop' },
-  },
-  {
-    url: '/images/Asset 2.jpg',
-    legende: { fr: 'Session de mentorat', en: 'Mentoring session' },
-  },
-  {
-    url: '/images/Asset 3.jpg',
-    legende: { fr: 'Bibliothèque mobile', en: 'Mobile library' },
-  },
-  {
-    url: '/images/Asset 4.jpg',
-    legende: { fr: 'Lecture collective', en: 'Collective reading' },
-  },
-  {
-    url: '/images/Asset 1.png',
-    legende: { fr: 'Co-création pédagogique', en: 'Co-creating pedagogy' },
-  },
-  {
-    url: '/images/Asset 2.png',
-    legende: { fr: 'Club Entre Filles', en: 'Girls club' },
-  },
-]
 
 export const equipeLeadership = [
   {
@@ -364,6 +348,22 @@ export const programmes = [
 
 export const articlesPresse = [
   {
+    media: 'Concours Takkball',
+    date: '2024',
+    titre: {
+      fr: 'Victoire The N\'Takou au concours Takkball',
+      en: 'The N\'Takou wins Takkball competition',
+    },
+    description: {
+      fr: 'The N\'Takou a remporté le concours Takkball, une reconnaissance de notre engagement pour l\'éducation en Afrique.',
+      en: 'The N\'Takou won the Takkball competition, a recognition of our commitment to education in Africa.',
+    },
+    url: '#',
+    logo: '/images/Victoire The N_Takou concours tac tac ball.jpg',
+    image: '/images/Victoire The N_Takou concours tac tac ball.jpg',
+    isConcours: true,
+  },
+  {
     media: 'RFI - Vivre Ailleurs',
     date: '31 Janvier 2021',
     titre: {
@@ -470,11 +470,6 @@ export const parcoursEngagement = [
   },
 ]
 
-export const imagesOdd = [
-  '/images/ODD - Logo/ODD 4.jpg',
-  '/images/ODD - Logo/FB_IMG_1744241494003.jpg',
-  '/images/ODD - Logo/FB_IMG_1744241524079.jpg',
-]
 
 export const liensSociaux = [
   { nom: 'Facebook', url: 'https://www.facebook.com/share/1BbuMt1VG7/', icone: 'FaFacebook' },
@@ -500,6 +495,18 @@ export const logosPartenaires = [
   '/images/Logos Partenaires/Projet Soutrali.png',
   '/images/Logos Partenaires/UNICEF.jpg',
 ]
+
+export const informationsOrganisation = {
+  siteWeb: 'http://www.thentakou.com',
+  secteur: { fr: 'Organisations à but non lucratif', en: 'Non-profit organizations' },
+  taille: { fr: '2-10 employés', en: '2-10 employees' },
+  siege: { fr: 'Asnières-sur-Seine, Île-de-France', en: 'Asnières-sur-Seine, Île-de-France' },
+  fondeeEn: 2015,
+  paysIntervention: {
+    fr: ['Cameroun', 'Côte d\'Ivoire', 'République Démocratique du Congo'],
+    en: ['Cameroon', 'Côte d\'Ivoire', 'Democratic Republic of Congo'],
+  },
+}
 
 export const partenaires = [
   {

@@ -15,7 +15,7 @@ export default function ScrollToTopButton() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-6 right-6 h-14 w-14 rounded-none border-2 border-darkYellow bg-darkYellow text-deepBlack shadow-jauneFort text-2xl flex items-center justify-center hover:bg-deepBlack hover:text-darkYellow hover:scale-110 transition-all duration-300"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 h-10 w-10 md:h-14 md:w-14 rounded-none border-2 border-darkYellow bg-darkYellow text-deepBlack shadow-jauneFort text-lg md:text-2xl flex items-center justify-center hover:bg-deepBlack hover:text-darkYellow hover:scale-110 transition-all duration-300"
       aria-label="Remonter"
     >
       <FaArrowUp />
